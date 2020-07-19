@@ -1,0 +1,18 @@
+<!--
+<h1>Subs#new</h1>
+<p>Find me in app/views/subs/new.html.erb</p>
+!-->
+
+<h1>科目登録</h1>
+
+<%= form_for Sub.new do |f| %>
+    <%= f.label :科目名 %>
+    <%= f.text_field :name %>
+    <%= f.label :型 %>
+    <%= f.text_field :kind %>
+    <%= f.submit %>
+  <% end %>
+
+
+
+
