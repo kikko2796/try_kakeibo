@@ -1,2 +1,17 @@
+<!--
 <h1>Subs#show</h1>
 <p>Find me in app/views/subs/show.html.erb</p>
+!-->
+
+<p>
+<strong>科目名</strong>
+<%= @sub.name %>
+</p>
+
+<p>
+<strong>入出残別</strong>
+<%= @sub.kind %>
+</p>
+
+<%= link_to 'Edit', edit_sub_path(@sub) %>
+<%= link_to 'Back', subs_path %>

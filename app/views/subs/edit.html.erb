@@ -1,2 +1,19 @@
+<!--
 <h1>Subs#edit</h1>
 <p>Find me in app/views/subs/edit.html.erb</p>
+!-->
+
+<h1>科目編集</h1>
+<!--
+<%= form_for Sub.new do |f| %>
+    <%= f.label :科目名 %>
+    <%= f.text_field :name %>
+    <%= f.label :型 %>
+    <%= f.text_field :kind %>
+    <%= f.submit"編集" %>
+  <% end %>
+!-->
+
+<%= render 'form', sub: @sub %>
+<%= link_to 'Show', @sub %>
+<%= link_to 'Back', sub_path %>

@@ -1,0 +1,18 @@
+<%= form_for(sub) do |f| %>
+
+    <div class="field">
+    <%= f.label :科目名 %>
+    <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+    <%= f.label :型 %>
+    <%= f.text_field :kind %>
+    </div>
+
+    <div class="actions">
+    <%= f.submit %>
+    </div>
+    
+  <% end %>
+
