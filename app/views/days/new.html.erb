@@ -1,2 +1,14 @@
+<!--
 <h1>Days#new</h1>
 <p>Find me in app/views/days/new.html.erb</p>
+!-->
+
+<h1>収支登録</h1>
+
+<%= render 'form', day: @day %>
+
+
+
+<%= link_to "Homeへ",  :controller => 'trys', :action => 'home' %>
+
+<%= link_to '収支一覧へ', days_path %>

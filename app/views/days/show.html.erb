@@ -1,2 +1,30 @@
+<!--
 <h1>Days#show</h1>
 <p>Find me in app/views/days/show.html.erb</p>
+!-->
+
+<p>
+<strong>日付</strong>
+<%= @day.date %>
+</p>
+
+<p>
+<strong>科目</strong>
+<%= @day.name %>
+</p>
+
+<p>
+<strong>金額</strong>
+<%= @day.value %>
+</p>
+
+<p>
+<strong>摘要</strong>
+<%= @day.discription %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_day_path(@day) %>
+<%= link_to 'Back', days_path %>

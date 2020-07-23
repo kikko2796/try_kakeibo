@@ -7,7 +7,8 @@
 
     <div class="field">
     <%= f.label :型 %>
-    <%= f.text_field :kind %>
+    <%= f.select :kind, [["残高", "残高"], ["収入", "収入"], ["支出", "支出"]], :include_blank => true %>
+   
     </div>
 
     <div class="actions">

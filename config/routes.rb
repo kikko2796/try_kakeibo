@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
-  root 'subs#index'
+  get 'trys/home' 
+  root 'trys#home'
   resources :subs
-  get 'days/index'
+  resources :days
+
+  get 'days/index' 
   get 'days/show'
+  
   get 'days/new'
+  post 'days' => "days#create"
   get 'days/edit'
+  post 'days' => "days#update"
+  delete 'days/destroy' => "days#destroy"
   get 'subs/index'
   get 'subs/show'
   get 'subs/new'
