@@ -59,7 +59,7 @@ end
 
 private
  def day_params
-  params.require(:day).permit(:date, :name, :value, :discription )
+  params.require(:day).permit(:date, :name, :value, :discription, :subs_id )
  end
 
  def set_day
