@@ -6,6 +6,11 @@
     </div>
 
     <div class="field">
+        <%= f.label :名前？ %>
+        <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
         <label id='subs_id'>科目</label>
         <select name="subs_id">
             <% @subs.each do |sub| %>   
