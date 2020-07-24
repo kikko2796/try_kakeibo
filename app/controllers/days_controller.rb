@@ -1,6 +1,6 @@
 class DaysController < ApplicationController
   def index
-    @days = Day.all
+    @day = Day.all
   end
 
   def show
@@ -15,7 +15,7 @@ class DaysController < ApplicationController
   def create
     @day = Day.new(day_params) 
     if @day.save
-      redirect_to @days
+      redirect_to @day
     else
       render :new
     end
@@ -31,8 +31,7 @@ class DaysController < ApplicationController
         redirect_to @day
        else
         render :edit
-       end
-     #end  
+       end 
   end
 
   def destroy
@@ -45,13 +44,13 @@ end
 
 private
  def day_params
-  params.require(:day).permit(:date, :name, :value, :discription )
+  params.require(:day).permit(:date, :name, :value, :discription, :subs_id)
  end
 
  def set_day
   @day = Day.find(params[:id])
  end
 
- def set_days
-  @days = Day.all
- end
+ #def set_days
+  #@days = Day.all
+ #end

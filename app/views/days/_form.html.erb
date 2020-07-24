@@ -1,31 +1,31 @@
 <%= form_for(day) do |f| %>
     
     <div class="field">
-    <%= f.label :日付 %>
-    <%= f.date_select :date %>
+        <%= f.label :日付 %>
+        <%= f.date_select :date %>
     </div>
 
     
     <div class="field">
-    <%= f.label :subs_id, '科目' %>
-    <%= f.collection_select(:subs_id, Sub.all, :id, :name ) %>
-    
+        <label id='subs_id'>科目</label>
+            <select name="subs_id">
+                <% @subs.each do |sub| %>  
     </div>
     
     <div class="field">
-    <%= f.label :金額 %>
-    <%= f.number_field :value %>
+        <%= f.label :金額 %>
+        <%= f.number_field :value %>
     </div>
 
     <div class="field">
-    <%= f.label :摘要 %>
-    <%= f.text_field :discription %>
+        <%= f.label :摘要 %>
+        <%= f.text_field :discription %>
     </div>
 
     <div class="actions">
-    <%= f.submit %>
+        <%= f.submit %>
     </div>
-    
+
 <% end %>
 
-  
+                

@@ -1,3 +1,3 @@
 class Day < ApplicationRecord
-    belongs_to :sub
+    belongs_to :sub, optional:true
 end
