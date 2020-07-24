@@ -13,6 +13,7 @@ class DaysController < ApplicationController
   end
 
   def create
+    
     @day = Day.new(day_params) 
     if @day.save
       redirect_to @day
@@ -50,6 +51,8 @@ private
  def set_day
   @day = Day.find(params[:id])
  end
+
+ 
 
  #def set_days
   #@days = Day.all
