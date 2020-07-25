@@ -1,14 +1,13 @@
 <%= form_for(sub) do |f| %>
 
     <div class="field">
-    <%= f.label :科目名 %>
-    <%= f.text_field :name %>
+    　<%= f.label :科目 %>
+    　<%= f.text_field :name %>
     </div>
 
     <div class="field">
-    <%= f.label :型 %>
-    <%= f.select :kind, [["残高", "残高"], ["収入", "収入"], ["支出", "支出"]], :include_blank => true %>
-   
+    　<%= f.label :型 %>
+    　<%= f.select :kind, [["残高", "残高"], ["収入", "収入"], ["支出", "支出"]], :include_blank => true %>
     </div>
 
     <div class="actions">

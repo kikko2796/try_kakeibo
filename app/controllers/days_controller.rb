@@ -9,13 +9,20 @@ class DaysController < ApplicationController
   end
 
   def new
-    @subs = Sub.all
+    #@subs = Sub.all
     @day = Day.new
   end
 
+  def edit
+    @day = Day.find(params[:id])
+  end
+
   def create
-    
+    #@sub = Sub.find(paramas[subs_id])
+    #@day.name = @sub.name.create(name_params)
+    #redirect_to sub_path(@sub)
     @day = Day.new(day_params) 
+    
     if @day.save
       redirect_to @day
     else
@@ -23,9 +30,7 @@ class DaysController < ApplicationController
     end
   end
 
-  def edit
-    @day = Day.find(params[:id])
-  end
+  
 
   def update
     @day = Day.find(params[:id])
@@ -48,16 +53,16 @@ end
 
 private
  def day_params
-  params.require(:day).permit(:date, :name, :value, :discription, :subs_id)
+  params.require(:day).permit(:date, :name, :value, :discription, :subs_id　=> [])
  end
 
  def set_day
   @day = Day.find(params[:id])
  end
 
- #def set_subs
-  #@subs = Sub.all
- #end
+def set_subs
+  @subs = Sub.all
+ end
 
  #def set_days
   #@days = Day.all
