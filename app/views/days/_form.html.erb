@@ -7,15 +7,9 @@
 
     
     <div class="field">
-    <!--    
-        <%= f.label :subs_id %>
-            <select name="subs_id">
-                <% @subs.each do |sub| %> 
-                    <% end %> 
-　　 !-->              
-       
-    <%= f.label :subs_id %>
+    <%= f.label :subs_id, '科目' %>
     <%= f.collection_select(:subs_id, @subs, :id, :name) %>
+    
     
     </div>
     

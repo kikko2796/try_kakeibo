@@ -5,6 +5,7 @@ class DaysController < ApplicationController
 
   def show
     @day = Day.find(params[:id])
+   
   end
 
   def new
@@ -41,6 +42,8 @@ class DaysController < ApplicationController
     redirect_to days_url 
   end
 
+
+
 end
 
 private
@@ -52,7 +55,9 @@ private
   @day = Day.find(params[:id])
  end
 
- 
+ #def set_subs
+  #@subs = Sub.all
+ #end
 
  #def set_days
   #@days = Day.all
