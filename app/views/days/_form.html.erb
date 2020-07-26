@@ -1,5 +1,5 @@
 
-<%= form_with model: day, local: true do |form| %>    
+<%= form_for [@post,@day], local: true do |f| %>    
     <% if day.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(day.errors.count, "error") %> prohibited this day from being saved:</h2>
@@ -11,32 +11,33 @@
       </ul>
     </div>
   <% end %>
-    
+
+ 
     <div class="field">
-    <%= form.label :日付 %>
-    <%= form.date_select :date %>
+    <%= f.label :日付 %>
+    <%= f.date_select :date %>
 </div>
+
+<% f.fields_for :days do |f| %>
+<div class="field">
+　<%= f.label :科目 %>
+　<%= f.collection_select(:subs_id, Sub.all, :id, :name) %> 
+</div>
+<% end %>
 
 
 <div class="field">
-　<%= form.label :科目 %>
-　<%= form.collection_select(:subs_id, Sub.all, :id, :name) %> 
-
-</div>
-
-
-<div class="field">
-    <%= form.label :金額 %>
-    <%= form.number_field :value %>
+    <%= f.label :金額 %>
+    <%= f.number_field :value %>
 </div>
 
 <div class="field">
-    <%= form.label :摘要 %>
-    <%= form.text_field :discription %>
+    <%= f.label :摘要 %>
+    <%= f.text_field :discription %>
 </div>
 
 <div class="actions">
-    <%= form.submit %>
+    <%= f.submit %>
 </div>
 
 <% end %>            

@@ -5,7 +5,9 @@ class DaysController < ApplicationController
 
   def show
     @day = Day.find(params[:id])
-   
+    
+    #@day = @sub.days.create
+    
   end
 
   def new
@@ -21,8 +23,13 @@ class DaysController < ApplicationController
     #@sub = Sub.find(paramas[subs_id])
     #@day.name = @sub.name.create(name_params)
     #redirect_to sub_path(@sub)
-    @day = Day.new(day_params) 
+    #@day = Day.new(day_params) 
+    #@day = sub.days.create
     
+    @day = Day.new(day_params)
+    #@day = @sub.day.create
+    #@sub = Sub.find(params[:id])
+    #@days = @sub.days
     if @day.save
       redirect_to @day
     else
@@ -53,7 +60,19 @@ end
 
 private
  def day_params
-  params.require(:day).permit(:date, :name, :value, :discription, :subs_id　=> [])
+  params
+  .require(:day)
+  .permit(
+    :subs_id,
+    :date,
+    :value,
+    :discription,
+    account_attributes:[
+      :id,
+      :name,
+      :kind
+  ]
+  )
  end
 
  def set_day

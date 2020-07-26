@@ -10,16 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_20_082434) do
+ActiveRecord::Schema.define(version: 2020_07_26_090349) do
 
   create_table "days", force: :cascade do |t|
+    t.integer "subs_id"
     t.date "date"
-    t.string "name"
     t.integer "value"
     t.string "discription"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "subs_id"
   end
 
   create_table "subs", force: :cascade do |t|

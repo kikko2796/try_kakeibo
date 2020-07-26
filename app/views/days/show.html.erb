@@ -10,13 +10,18 @@
 
 <p>
 <strong>科目</strong>
-<%= @day.subs_id %>
+<%= render @days %>
+</p>
+
+
 
 <!--
+<% if @sub.days.any? %>
+<%= @day.subs_id %>
 <%= @day.subs_id %>
 <%= @day.name %>
 !-->
-</p>
+
 
 <p>
 <strong>金額</strong>
